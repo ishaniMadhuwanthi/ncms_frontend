@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<title>NCMS</title>
+<link rel="shortcut icon" href="images/favicon.png">
+
+<body>
+
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="#about">About us</a>
+        <a href="#contact">Contact</a>  
+    </nav>
+    
+  <!--register form-->
+    <div class="register_patient" >
+        <h3>REGISTER AS PATIENT</h3>
+        <form>
+        <div class="row">
+        <div class="col-25">
+            <label for="fname">First Name</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="fname" name="fname" placeholder="Enter your First name">
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="lname">Last Name</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="lname" name="lname" placeholder="Enter your Last name">
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="content">Contact</label>
+            </div>
+            <div class="col-75">
+            <input type="text" id="contact" name="Contact" placeholder="Enter your Phone number">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="address">Address</label>
+            </div>
+            <div class="col-75">
+            <input type="text" id="address" name="address" placeholder="Enter your address">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="district">District</label>
+            </div>
+            <div class="col-75">
+                <select id="district">
+                    <option value="kurunegala" selected>Kurunegala</option>
+                    <option value="colombo">Colombo</option>
+                    <option value="gampaha">Gampaha</option>
+                    <option value="mathara">Mathara</option>
+                    <option value="hambanthota">Hambanthota</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="gender">Gender</label>
+            </div>
+            <div class="col-75">
+                <div class="col-25"> 
+                    <input type="radio" id="male" name="male" value="male">
+                    <label for="male">Male</label><br>
+                </div>
+                <div class="col-25"> 
+                    <input type="radio" id="female" name="female" value="female">
+                    <label for="female">Female</label><br><br>
+                </div>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="email">Email</label>
+            </div>
+            <div class="col-75">
+            <input type="text" id="email" name="email" placeholder="Enter your email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="age">Age</label>
+            </div>
+            <div class="col-75">
+            <input type="text" id="age" name="age" placeholder="Enter your email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="location">Location</label>
+            </div>
+            <div id="x_co" class="col-75">
+                <input type="text" id="age" name="age" placeholder="Enter your location x cooordinate" onclick="getXlocation()">
+            </div>
+            <div class="row">
+                <div id="y_co" class="col-75">
+                    <input type="text" id="age" name="age" placeholder="Enter your location y cooordinate" onclick="getYlocation()">
+                </div>
+            </div>   
+        </div>
+
+        <div class="row" style="margin-left: 60px;">
+            <div class="col-25"> 
+                <button type="submit" value="Submit" >Register</button>
+            </div>        
+        </div>
+        </form>
+    </div>   
+
+    <script>
+        var x = document.getElementById("x_co");
+        
+        function getXlocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showXposition);
+          } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        
+        function showXposition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude ;
+        }
+    </script>
+
+<script>
+    var y = document.getElementById("y_co");
+    
+    function getYlocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showYposition);
+      } else { 
+        y.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showYposition(position) {
+      y.innerHTML = "Longitude: " + position.coords.longitude;
+    }
+</script>
+    
+
+</body>
+</html>
+

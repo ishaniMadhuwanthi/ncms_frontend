@@ -1,0 +1,312 @@
+.body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.navbar{
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+.homeSlides{
+    width:100%;
+    
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+}
+
+.container .content {
+    position: absolute;
+    bottom: 50%;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+
+.register {
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    background: #f2f2f2; 
+    color: black;
+    width: 500px;
+    height: 350px;
+    text-align: left;
+    font-size: 15px;
+    margin-left: -250px;
+    margin-top: -175px;
+}
+
+.register h3{
+    text-align: center;
+}
+
+.row{
+    width: 500px; 
+}
+
+.register input[type=text], select, textarea {
+    width: 300px;
+    height: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.register label{
+  padding: 12px 10px;
+  display: inline-block;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+  
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}  
+  
+.register button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-right: 10px;
+}
+
+.register button:hover {
+    background-color: #45a049;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+.register_patient {
+    border-radius: 5px;
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    background: #f2f2f2; 
+    color: black;
+    width: 500px;
+    height: 600px;
+    text-align: left;
+    font-size: 15px;
+    margin-left: -250px;
+    margin-top: -300px;
+    
+}
+
+.register_patient h3{
+    text-align: center;
+}
+
+.register_patient input[type=text], select, textarea {
+    width: 300px;
+    height: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.register_patient label{
+  padding: 12px 10px;
+  display: inline-block;
+}
+
+.register_patient button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    margin-left: 100px;
+}
+
+.register_patient button:hover {
+    background-color: #45a049;
+}
+
+.login{
+    height: 100%;
+    width: 100%;
+    background-image: url(images/img2.jpg);
+    background-position: center;
+    background-size: 100%;
+    position: absolute;
+}
+
+.form-box{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 6% auto;
+    background:#f2f2f2;
+    padding: 5px;
+   overflow: hidden;
+}
+
+.btn-box{
+    width: 300px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 3px;
+    border-radius: 30px;
+}
+
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right,#009933,#669900);
+    border-radius: 30px;
+    transition: 0.5s;
+    
+}
+
+.input-group{
+    top:180px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s;
+}
+
+.login input{
+    width: 100%;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn{
+   width: 85%;
+   display: block;
+   margin: auto;
+   outline: none;
+   background-color: #4CAF50;
+   color: white;
+   padding: 12px 50px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+
+.input-group button:hover {
+    background-color: #45a049;
+}
+
+#doctor{
+    left: 50px;
+}
+
+#moh{
+    left: 450px;
+}
+
+#patient{
+    left:450px;
+}
+
+  .reg-page{
+    height: 100%;
+    width: 100%;
+    background-image: url(images/img2.jpg);
+    background-position: center;
+    background-size: 100%;
+    position: absolute;
+  }
+
+  .hmgt{
+    height: 100%;
+    width: 100%;
+    background-image: url(images/img2.jpg);
+    background-position: center;
+    background-size: 100%;
+    position: absolute;   
+  }
+  
+.hmgt table {
+    font-family: "sans-serif";
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.hmgt th,td{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.hmgt th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.hmgt td{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:#f2f2f2;
+    color:black;
+}
