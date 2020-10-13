@@ -402,3 +402,13 @@ margin-top: 10px;
     position: absolute;
  }
 
+ .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+    width: 80%;
+    margin-left: 80px;
+    margin-top: 80px;
+  }
+
