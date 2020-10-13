@@ -17,7 +17,114 @@
             <a href="hospitalMgt.html">Hospital</a>
             <a href="patientMgt.html">Patient</a>    
         </nav>
-       
+
+        <button class="open-button" onclick="openForm()">Add Hospital</button>
+
+<div class="form-popup" id="myForm">
+  <form class="form-container">
+    <h3>ADD NEW HOSPITAL</h3>
+    <div class="row">
+        <div class="col-25">
+          <label for="hid">Hospital ID</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="hid" name="hid" placeholder="Enter hospital id" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="hname">Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="hname" name="hname" placeholder="Enter hospital name" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+        <label for="district">District</label>
+        </div>
+        <div class="col-75">
+            <select id="district">
+                <option value="kurunegala" selected>Kurunegala</option>
+                <option value="colombo">Colombo</option>
+                <option value="gampaha">Gampaha</option>
+                <option value="mathara">Mathara</option>
+                <option value="hambanthota">Hambanthota</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="xlocation">X Location</label>
+        </div>
+        <div id="x_co" class="col-75">
+          <input type="text" id="xlocation" name="xlocation" onclick="getXlocation()" placeholder="Enter x location" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="ylocation">Y Location</label>
+        </div>
+        <div id="y_co" class="col-75">
+          <input type="text" id="ylocation" name="ylocation" onclick="getYlocation()" placeholder="Enter y location" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="bdate">Build Date</label>
+        </div>
+        <div class="col-75">
+            <input type="date" id="bdate" name="bdate">
+        </div>
+    </div>
+    <button type="submit" class="btn">Add Hospital</button>
+    <button type="button" class="cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+<script>
+    var x = document.getElementById("x_co");
+    
+    function getXlocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showXposition);
+      } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showXposition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude ;
+    }
+</script>
+
+<script>
+var y = document.getElementById("y_co");
+
+function getYlocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showYposition);
+  } else { 
+    y.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showYposition(position) {
+  y.innerHTML = "Longitude: " + position.coords.longitude;
+}
+</script>
+
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
 
         <table>
             <tr>
@@ -51,6 +158,7 @@
                 <td>Delete</td>
             </tr>
           </table>
+ 
     </div>
 </body>
 </html>

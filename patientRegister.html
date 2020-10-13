@@ -8,13 +8,13 @@
 <link rel="shortcut icon" href="images/favicon.png">
 
 <body>
-
     
+    <div class="reg">
     <!-- Navigation -->
     <nav class="navbar">
         <a href="index.html">Home</a>
-        <a href="#about">About us</a>
-        <a href="#contact">Contact</a>  
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact</a>  
     </nav>
     
   <!--register form-->
@@ -26,7 +26,7 @@
             <label for="fname">First Name</label>
         </div>
         <div class="col-75">
-            <input type="text" id="fname" name="fname" placeholder="Enter your First name">
+            <input type="text" id="fname" name="fname" placeholder="Enter your First name" required>
         </div>
         </div>
         <div class="row">
@@ -34,7 +34,7 @@
             <label for="lname">Last Name</label>
         </div>
         <div class="col-75">
-            <input type="text" id="lname" name="lname" placeholder="Enter your Last name">
+            <input type="text" id="lname" name="lname" placeholder="Enter your Last name" required>
         </div>
         </div>
         <div class="row">
@@ -42,7 +42,7 @@
             <label for="content">Contact</label>
             </div>
             <div class="col-75">
-            <input type="text" id="contact" name="Contact" placeholder="Enter your Phone number">
+            <input type="text" id="contact" name="Contact" placeholder="Enter your Phone number" required>
             </div>
         </div>
         <div class="row">
@@ -50,7 +50,7 @@
             <label for="address">Address</label>
             </div>
             <div class="col-75">
-            <input type="text" id="address" name="address" placeholder="Enter your address">
+            <input type="text" id="address" name="address" placeholder="Enter your address" required>
             </div>
         </div>
         <div class="row">
@@ -87,7 +87,7 @@
             <label for="email">Email</label>
             </div>
             <div class="col-75">
-            <input type="text" id="email" name="email" placeholder="Enter your email">
+            <input type="text" id="email" name="email" placeholder="Enter your email" required>
             </div>
         </div>
         <div class="row">
@@ -95,7 +95,7 @@
             <label for="age">Age</label>
             </div>
             <div class="col-75">
-            <input type="text" id="age" name="age" placeholder="Enter your email">
+            <input type="text" id="age" name="age" placeholder="Enter your age" required>
             </div>
         </div>
         <div class="row">
@@ -103,11 +103,11 @@
                 <label for="location">Location</label>
             </div>
             <div id="x_co" class="col-75">
-                <input type="text" id="age" name="age" placeholder="Enter your location x cooordinate" onclick="getXlocation()">
+                <input type="text" id="age" name="age" placeholder="Enter your location x cooordinate" onclick="getXlocation()" required>
             </div>
             <div class="row">
                 <div id="y_co" class="col-75">
-                    <input type="text" id="age" name="age" placeholder="Enter your location y cooordinate" onclick="getYlocation()">
+                    <input type="text" id="age" name="age" placeholder="Enter your location y cooordinate" onclick="getYlocation()" required>
                 </div>
             </div>   
         </div>
@@ -150,9 +150,8 @@
     function showYposition(position) {
       y.innerHTML = "Longitude: " + position.coords.longitude;
     }
-</script>
-    
-
+</script>  
+</div>
 </body>
 </html>
 

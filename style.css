@@ -42,7 +42,7 @@
     color: #f1f1f1;
     width: 100%;
     text-align: center;
-    font-size: 25px;
+    font-size: 40px;
 }
 
 .register {
@@ -75,7 +75,6 @@
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    resize: vertical;
 }
 
 .register label{
@@ -86,13 +85,13 @@
 .col-25 {
     float: left;
     width: 25%;
-    margin-top: 6px;
+    margin-top: 5px;
 }
   
 .col-75 {
     float: left;
     width: 75%;
-    margin-top: 6px;
+    margin-top: 5px;
 }  
   
 .register button{
@@ -140,12 +139,12 @@
 
 .register_patient input[type=text], select, textarea {
     width: 300px;
-    height: 10px;
+    height: 8px;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    resize: vertical;
 }
+
 
 .register_patient label{
   padding: 12px 10px;
@@ -161,6 +160,8 @@
     cursor: pointer;
     float: left;
     margin-left: 100px;
+
+margin-top: 10px;
 }
 
 .register_patient button:hover {
@@ -310,3 +311,94 @@
     background-color:#f2f2f2;
     color:black;
 }
+
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 280px;
+    border-radius: 40px;
+  }
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    margin-left: 100px;
+    margin-top: 100px;
+    border: 1px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    width: 500px;
+    height: 400px;
+    padding: 12px;
+    background-color: rgb(168, 167, 167);
+  }
+
+  .form-container input[type=text], input[type=date], select, textarea {
+    width: 300px;
+    height: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  .form-container .btn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 50px;
+}
+
+  .form-container .cancel {
+    background-color: red;
+    color: white;
+    padding: 12px 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    width: 80%;
+    margin-left: 50px;
+  }
+
+  .form-container h3{
+    text-align: center;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+ }
+
+ .reg{
+    height: 800px;
+    width: 100%;
+    background-image: url(images/img2.jpg);
+    background-position: center;
+    background-repeat:no-repeat ;
+    background-size: 100%;
+    position: absolute;
+ }
+
