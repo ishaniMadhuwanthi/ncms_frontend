@@ -188,7 +188,7 @@ margin-top: 10px;
 }
 
 .btn-box{
-    width: 300px;
+    width: 200px;
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 3px;
@@ -268,7 +268,7 @@ margin-top: 10px;
   .reg-page{
     height: 100%;
     width: 100%;
-    background-image: url(images/img2.jpg);
+    /* background-image: url(images/img2.jpg); */
     background-position: center;
     background-size: 100%;
     position: absolute;
@@ -277,7 +277,7 @@ margin-top: 10px;
   .hmgt{
     height: 100%;
     width: 100%;
-    background-image: url(images/img2.jpg);
+    /* background-image: url(images/img2.jpg); */
     background-position: center;
     background-size: 100%;
     position: absolute;   
@@ -403,12 +403,18 @@ margin-top: 10px;
  }
 
  .about-section {
-    padding: 50px;
+    padding: 20px;
     text-align: center;
     background-color: #474e5d;
     color: white;
     width: 80%;
     margin-left: 80px;
     margin-top: 80px;
+  }
+
+  .about-des{
+    text-align: left;
+    color: white;
+    margin-left: 50px;
   }
 

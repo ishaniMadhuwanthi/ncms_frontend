@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="toaster/toastr.min.css">
+<title>NCMS-National COVID Management System</title>
+<link rel="shortcut icon" href="images/favicon.png">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/doctor.js"></script>
+  <script src="toaster/toastr.min.js"></script>
+  </head>
+<body>
+ <div class="hmgt">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="aboutMgt.html">About us</a>
+            <a href="contactMgt.html">Contact</a>
+            <a href="hospitalMgt.html">Hospital</a>
+            <a href="patientMgt.html">Patient</a>    
+        </nav>
+
+       
+<div >
+  <form id="doctor_add_form" class="form-container" >
+    <h3>ADD NEW DOCTOR</h3>
+    <div class="row">
+        <div class="col-25">
+          <label for="doctor_id">Doctor ID</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="doctor_id" name="doctor_id" placeholder="Enter doctor id" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="name">Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="name" name="name" placeholder="Enter doctor name" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+        <label for="email">Email</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="email" name="email" placeholder="Enter email" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="hospital_id">Hospital id</label>
+        </div>
+        <div class="col-75">
+          <!-- <input type="text" id="xlocation" name="xlocation"  placeholder="Enter x location" required> -->
+          <input type="text" id="hospital_id" name="hospital_id" placeholder="Enter hospital id" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="is_director">Role</label>
+        </div>
+        <div  class="col-75">
+            <input type="checkbox" id="is_director" name="is_director" value="1">
+            <label for="is_director"> Director</label>
+            <input type="checkbox" id="is_director" name="is_director" value="2">
+            <label for="is_director"> Doctor</label>
+        </div>
+    </div>
+   
+    <button type="submit" class="btn">Add Doctor</button>
+    
+  </form>
+</div>
+
+</div>
+   
+<script type="text/javascript">
+  $(document).ready(function () {
+      $('#doctor_add_form').submit(function (e) {
+          e.preventDefault();
+          let form = $(this);
+          addDoctor(form)
+      });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

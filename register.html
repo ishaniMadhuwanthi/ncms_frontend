@@ -3,8 +3,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<title>NCMS</title>
+<title>NCMS-National COVID Management System</title>
 <link rel="shortcut icon" href="images/favicon.png">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   
+</head>
 
 <body>
   <div class="reg-page">
@@ -16,7 +19,7 @@
   </nav>
 
     <div class="register">
-      <form>
+      <form id="user_reg_form" action="http://localhost:8090/user" method="POST">
         <h3>REGISTER</h3>
       <div class="row">
         <div class="col-25">
@@ -28,7 +31,7 @@
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="lname">Password</label>
+          <label for="password">Password</label>
         </div>
         <div class="col-75">
           <input type="text" id="password" name="password" placeholder="Enter your password" required>
@@ -61,7 +64,7 @@
               <button type="submit" value="Submit">Register as Doctor</button>
               </div>
               <div class="col-25"> 
-              <button type="submit" value="Submit">Register as Moh</button>
+              <button type="submit" value="Submit" href="login.html">Register as Moh</button>
               </div>
       </div>
       <br>
@@ -70,11 +73,10 @@
       </div>
       </form>
    
-    </div> 
-           
-
-
-    </div>
+      
+      <script>
+       
+      </script>
 </body>
 </html>
 

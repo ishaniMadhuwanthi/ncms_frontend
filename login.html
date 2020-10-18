@@ -4,8 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<title>NCMS</title>
+<title>NCMS-National COVID Management System</title>
 <link rel="shortcut icon" href="images/favicon.png">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="toaster/toastr.min.js"></script>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/jquery.easing.min.js"></script>
+    </head>
 
 <body>
 
@@ -16,8 +24,7 @@
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="about.html">About us</a>
-            <a href="contact.html">Contact</a>
-            <a href="register.html">Register</a>       
+            <a href="contact.html">Contact</a>      
         </nav>
 
           <!---login form-->
@@ -26,34 +33,26 @@
                 <div id="btn"></div>
                 <button type="button" class="toggle-btn" onclick="doctor()">Doctor</button>
                 <button type="button" class="toggle-btn" onclick="moh()">Moh</button>
-                <button type="button" class="toggle-btn" onclick="patient()">Patient</button>
+                <!-- <button type="button" class="toggle-btn" onclick="patient()">Patient</button> -->
             </div>
-            <form id="doctor" class="input-group">
-                <input type="doctor_id" classs="input-field" placeholder="ID" required>
-                <input type="email" classs="input-field" placeholder="Email" required>
-                <input type="text" classs="input-field" placeholder="Password" required>
+            <form id="doctor_login_form" class="input-group">
+                <input type="email" classs="input-field" placeholder="Email" id="email" name="email" required>
+                <input type="text" classs="input-field" placeholder="Password" id="doctor_id" name="doctor_id" required>
                 <button type="submit" class="submit-btn" onclick="doctorLogin()">Login</button>
-                <div class="row" style="margin-left: 10px;">
-                    If you are not registered, you can register<a href="register.html"> here.</a>
-                </div>
             </form>
-            <form id="moh" class="input-group">
-                <input type="moh_id" classs="input-field" placeholder="ID" required>
-                <input type="email" classs="input-field" placeholder="Email" required>
-                <input type="text" classs="input-field" placeholder="Password" required>
+            <form id="moh_login_form" class="input-group">
+                <input type="email" classs="input-field" placeholder="Email" id="email" name="email"  required>
+                <input type="text" classs="input-field" placeholder="Password" id="moh_id" name="moh_id" required>
                 <button type="submit" class="submit-btn" onclick="mohLogin()">Login</button>
-                <div class="row" style="margin-left: 10px;">
-                    If you are not registered, you can register<a href="register.html"> here.</a>
-                </div>
             </form>
-            <form id="patient" class="input-group">
-                <input type="email" classs="input-field" placeholder="Email" required>
-                <input type="text" classs="input-field" placeholder="Password" required>
+            <!-- <form id="patient" class="input-group">
+                <input type="email" classs="input-field" placeholder="Email" id="email" name="email"  required>
+                <input type="text" classs="input-field" placeholder="Password" id="password" name="password" required>
                 <button type="submit" class="submit-btn" onclick="patientLogin()">Login</button>
                 <div class="row" style="margin-left: 10px;">
-                    If you are not registered, you can register<a href="register.html"> here.</a>
+                    If you are not registered, you can register<a href="patientRegister.html"> here.</a>
                 </div>
-            </form>
+            </form> -->
         </div>
                
 <!--footer-->
@@ -64,30 +63,40 @@
     </div>
     
     <script>
-        var w=document.getElementById("patient");
-        var x=document.getElementById("doctor");
-        var y=document.getElementById("moh");
+        // var w=document.getElementById("patient");
+        var x=document.getElementById("doctor_login_form");
+        var y=document.getElementById("moh_login_form");
         var z=document.getElementById("btn");
 
         function doctor(){
             x.style.left="50px";
             y.style.left="450px";
-            w.style.left="450px";
             z.style.left="0px";
         }
         function moh(){
             x.style.left="-400px";
             y.style.left="50px";
-            w.style.left="450px";
             z.style.left="100px";
         }
-        function patient(){
-            x.style.left="-400px";
-            y.style.left="-400px";
-            w.style.left="50px";
-            z.style.left="190px";
-        }
+        // function patient(){
+        //     x.style.left="-400px";
+        //     y.style.left="-400px";
+        //     w.style.left="50px";
+        //     z.style.left="190px";
+        // }
     </script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#doctor_login_form').submit(function (e) {
+            e.preventDefault();
+            $(".errorMessage").remove();
+
+            let form = $(this);
+            doctorLogin(form);
+        });
+    });
+</script>
 
 </body>
 </html>

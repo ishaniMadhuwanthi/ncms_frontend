@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="toaster/toastr.min.css">
+<title>NCMS-National COVID Management System</title>
+<link rel="shortcut icon" href="images/favicon.png">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/hospital.js"></script>
+  <script src="toaster/toastr.min.js"></script>
+  <script src="jquery/jquery.min.js"></script>
+  <script src="jquery/jquery.easing.min.js"></script>
+  </head>
+<body>
+ <div class="hmgt">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+            <a href="hospital.html">Hospital</a>
+            <a href="patient.html">Patient</a>
+            <a href="doctor.html">Doctor</a>     
+        </nav>
+
+        <button class="open-button" onclick="window.location.href='addHospital.html';">Add Hospital</button>
+
+
+<!--hospital list-->
+<table  id="hospitals-list" >
+  <thead>
+      <tr>
+          <th>Hospital ID</th>
+          <th>Name</th>
+          <th>District</th>
+          <th>X Location</th>
+          <th>Y Location</th>
+          <!-- <th>Patients</th> -->
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+</div>
+
+    <script type="text/javascript">
+      $(document).ready(function () { 
+          loadHospitalList();
+      });
+
+      
+    </script>
+   
+
+</body>
+</html>s
