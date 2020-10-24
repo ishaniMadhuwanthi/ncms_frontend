@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<title>NCMS-National COVID Management System</title>
+<link rel="shortcut icon" href="images/favicon.png">
+
+<body style="background-color:cadetblue";>
+ <div class="login"> 
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+            <a href="patient.html">Patient</a>    
+        </nav>
+
+        <div class="level-btns">
+            <button class="button1" id="hospital_level" onclick="hosStat()">HOSPITAL LEVEL STATISTICS</button>
+            <button class="button2" id="district_level" onclick="disStat()">DISTRIC LEVEL STATISTICS</button>
+            <button class="button3" id="country_level" onclick="conStat()">COUNTRY LEVEL STATISTICS</button>        
+        </div>
+    
+        <div class="level-cards">
+            <div id="hosStat" >
+                <table  id="hospital-stats" >
+                    <thead>
+                        <tr>
+                            <th>Hospital Name</th>
+                            <th>Statistics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+    
+    
+            <div id="disStat" >
+                <table  id="district-stats" >
+                    <thead>
+                        <tr>
+                            <th>Dsitrict Name</th>
+                            <th>Statistics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+    
+    
+            <div id="conStat" >
+                <table  id="country-stats" >
+                    <thead>
+                        <tr>
+                            <th>Statistics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    
+    </div>
+    
+    </div>
+
+        
+ </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/stat.js"></script>
+<script src="toaster/toastr.min.js"></script>
+<script src="jquery/jquery.easing.min.js"></script>
+<script src="jquery/js.cookie-2.2.1.min.js"></script>
+<script src="jquery/sweetalert2.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () { 
+    loadHospitalStat();
+});  
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () { 
+    loadDistrictStat();
+});  
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () { 
+    loadCountryStat();
+});  
+</script>
+
+<script>  
+function hosStat() {     
+    var card1 = document.getElementById("hosStat");
+  if (card1.style.display === "none") {
+    card1.style.display = "block";
+  } else {
+    card1.style.display = "none";
+  }
+}
+
+function disStat() { 
+    var card2 = document.getElementById("disStat");
+  if (card2.style.display === "none") {
+    card2.style.display = "block";
+  } else {
+    card2.style.display = "none";
+  }
+}
+
+function conStat() { 
+  var card3 = document.getElementById("conStat"); 
+  if (card3.style.display === "none") {
+    card3.style.display = "block";
+  } else {
+    card3.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

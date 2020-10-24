@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<title>NCMS-National COVID Management System</title>
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="stylesheet" href="toaster/toastr.min.css">
+
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/patient.js"></script>
+        <script src="toaster/toastr.min.js"></script>
+        <script src="jquery/jquery.min.js"></script>
+        <script src="jquery/jquery.easing.min.js"></script>
+        <script src="jquery/js.cookie-2.2.1.min.js"></script>
+</head>
+
+<body style="background-color:cadetblue";>
+    
+    <div class="reg" >
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>  
+        </nav>
+    
+<div class="register_patient" > 
+        <form >
+            <h3>MY PROFILE</h3>
+            <div class="row">
+                <div class="col-25">
+                    <label>NIC</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="patient_id" name="patient_id" readonly>
+                </div>
+                </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="fname">First Name</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="first_name" name="first_name" readonly>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="lname">Last Name</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="last_name" name="last_name" readonly>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="content">Contact</label>
+            </div>
+            <div class="col-75">
+            <input type="text" id="contact" name="contact" readonly>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-25">
+            <label for="district">District</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="district" name="district" readonly>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-25">
+            <label for="email">Email</label>
+            </div>
+            <div class="col-75">
+            <input type="text" id="email" name="email" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="age">Age</label>
+            </div>
+            <div class="col-75">
+            <input type="text" id="age" name="age" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="location">Location</label>
+            </div>
+            <div id="x_co" class="col-75">
+                <input type="text" id="x_location" name="x_location" readonly>
+            </div>
+            <div class="row">
+                <div  class="col-75">
+                    <input type="text" id="y_location" name="y_location" readonly>
+                </div>
+            </div>   
+        </div>  
+        <!----hospital details display-->
+        <div class="admit_details">
+            <h3 style="padding-top: 5px;">Your Admit Details</h3>
+            <div class="row">
+                <div class="col-25">
+                <label>Nearest Hospital</label>
+                </div>
+                <div class="col-75">
+                <input type="text" id="nearestHospital" name="nearestHospital" readonly>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-25">
+                <label >Bed ID</label>
+                </div>
+                <div class="col-75">
+                <input type="text" id="bed_id" name="bed_id" readonly>
+                </div>
+            </div> 
+            <!-- <div class="row">
+                <div class="col-25">
+                <label>Serial Number</label>
+                </div>
+                <div class="col-75">
+                <input type="text" id="serial_no" name="serial_no" readonly>
+                </div>
+            </div>  -->
+            <button style="margin-left: 200px;" ><a href="index.html">OK</a></button>
+        </div>      
+        </form>
+        </div>
+    </div> 
+
+<script>
+var seq=0;
+function viewInfo(){
+seq=seq+1;
+    document.getElementById("serial_no").value = seq;
+
+}
+</script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            dashboardPatient();
+        });
+    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/patient.js"></script>
+<script src="toaster/toastr.min.js"></script>
+<script src="jquery/jquery.min.js"></script>
+<script src="jquery/jquery.easing.min.js"></script>
+<script src="jquery/js.cookie-2.2.1.min.js"></script>
+</body>
+</html>

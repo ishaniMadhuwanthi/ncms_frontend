@@ -7,10 +7,18 @@
 <title>NCMS-National COVID Management System</title>
 <link rel="shortcut icon" href="images/favicon.png">
 
-<body>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/patient.js"></script>
+    <script src="toaster/toastr.min.js"></script>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/jquery.easing.min.js"></script>
+    </head>
+
+<body style="background-color:cadetblue";>
  <div class="hmgt">
         <!-- Navigation -->
-        <nav class="navbar">
+        <nav class="navbar" style="margin-bottom: 50px;">
             <a href="index.html">Home</a>
             <a href="about.html">About us</a>
             <a href="contact.html">Contact</a>
@@ -18,7 +26,6 @@
             <a href="patient.html">Patient</a>  
             <a href="doctor.html">Doctor</a>   
         </nav>
-
 
 <!--hospital list-->
 <table  id="patient-list" >
@@ -33,14 +40,21 @@
             <th>Age</th>
             <th>X location</th>
             <th>Y location</th>
-            <!-- <th>Patients</th> -->
-            <th></th>
+            <th>Admit date</th>
+            <th>Discharge date</th>
+            <th>View</th>
         </tr>
     </thead>
     <tbody>
     </tbody>
   </table>
   
-    </div>
+</div>
+
+    <script type="text/javascript">
+        $(document).ready(function () { 
+            loadPatientList();
+        });
+    </script>
 </body>
 </html>

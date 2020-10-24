@@ -7,8 +7,108 @@
 <title>NCMS-National COVID Management System</title>
 <link rel="shortcut icon" href="images/favicon.png">
 
-<body>
-  
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/hospital.js"></script>
+    <script src="js/doctor.js"></script>
+    <script src="toaster/toastr.min.js"></script>
+    <script src="jquery/jquery.easing.min.js"></script>
+    <script src="jquery/js.cookie-2.2.1.min.js"></script>
+    <script src="jquery/sweetalert2.min.js"></script>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/bootstrap.bundle.min.js"></script>
+</head>
+
+<body style="background-color:cadetblue";>
+    <div class="hmgt">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+            <a href="hospital.html">Hospital</a>
+            <a href="patient.html">Patient</a>    
+        </nav>
+
+        <div >
+            <form  id="updateHospital" class="form-container" >
+              <h3>EDIT HOSPITAL</h3>
+              <div class="row">
+                  <div class="col-25">
+                    <label for="hid">Hospital ID</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="hospital_id" name="hospital_id" required>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-25">
+                    <label for="hname">Name</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="name" name="name" required>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-25">
+                  <label for="district">District</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="district" name="district" required>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-25">
+                    <label for="xlocation">X Location</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="x_location" name="x_location" required>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-25">
+                    <label for="ylocation">Y Location</label>
+                  </div>
+                  <div  class="col-75">
+                    <input type="text" id="y_location" name="y_location" required>
+                  </div>
+              </div>
+             
+              <button type="button" class="btn" id="delete">Delete</button>
+              <button type="submit" class="btn">Save</button>
+              
+            </form>
+          </div>
+
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $.when(editHospital(getUrlParameter("hospital_id")));
+                $('#updateHospital').submit(function (e) {
+                    e.preventDefault();
+                    let form = $(this);
+                    updateHospital(getUrlParameter("hospital_id"), form)
+                });
+
+                $('#delete').click(function (e){
+                     e.preventDefault();
+
+                    Swal.fire({
+                        title: 'Confirm Action',
+                        text: 'Are you sure do you want to delete?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        allowEnterKey: false,
+                        confirmButtonText: 'Delete',
+                        cancelButtonText: 'Cancel'
+                    }).then((result) => {
+                        if (result.value) {
+                            $.when(deleteHospital(getUrlParameter("hospital_id"))).then(window.location.replace("hospital.html"));
+                        }
+                    });
+                })
+            });
+        </script>
 
     
 </body>

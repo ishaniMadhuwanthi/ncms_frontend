@@ -14,7 +14,7 @@
   <script src="jquery/jquery.min.js"></script>
   <script src="jquery/jquery.easing.min.js"></script>
   </head>
-<body>
+<body style="background-color:cadetblue";>
  <div class="hmgt">
         <!-- Navigation -->
         <nav class="navbar">
@@ -23,11 +23,10 @@
             <a href="contact.html">Contact</a>
             <a href="hospital.html">Hospital</a>
             <a href="patient.html">Patient</a>
-            <a href="doctor.html">Patient</a>    
+            <a href="doctor.html">Doctor</a>    
         </nav>
 
-        <button class="open-button" onclick="window.location.href='addDoctor.html';">Add Doctor</button>
-
+        <button class="open-button" onclick="window.location.href='addDoctor.html';" style="margin-bottom:50px">Add Doctor</button>
 
 <!--hospital list-->
 <table  id="doctor-list" >
@@ -38,8 +37,6 @@
           <th>Email</th>
           <th>Hospital ID</th>
           <th>Is director</th>
-          <!-- <th>Patients</th> -->
-          <th></th>
       </tr>
   </thead>
   <tbody>
@@ -52,10 +49,8 @@
       $(document).ready(function () { 
           loadDoctorList();
       });
-
-      
     </script>
    
 
 </body>
-</html>s
+</html>

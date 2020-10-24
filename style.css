@@ -13,9 +13,9 @@
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 20px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .navbar a:hover {
@@ -23,20 +23,16 @@
     color: black;
 }
 
+.hmgt{
+    width: 100%;
+    height: 100%;
+    background-color: cadetblue;
+    background-position: center;
+    position: absolute;   
+  }
 
-.homeSlides{
-    width:100%;
-    
-}
-
-.container {
-    position: relative;
-    margin: 0 auto;
-}
-
-.container .content {
-    position: absolute;
-    bottom: 50%;
+.content {
+    margin-top: 100px; 
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
     color: #f1f1f1;
@@ -44,6 +40,74 @@
     text-align: center;
     font-size: 40px;
 }
+
+.content h1{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.level-btns button { 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+.button1 {background-color:#900C3F ;} /* Green */
+.button2 {background-color: #1F31EC ;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+
+ .level-btns {
+     margin-left: 270px;
+ } 
+
+ 
+ #hosStat {
+    width: 30%;
+    padding: 50px 0;
+    background-color: wheat;
+    margin-top: 20px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto 
+  }
+
+  #disStat {
+    width: 30%;
+    padding: 50px 0;
+    background-color: wheat;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+  }
+
+  #conStat {
+    width: 30%;
+    padding: 50px 0;
+    background-color: wheat;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+  }
+
+
+ .hmgt table {
+    font-family: sans-serif;
+    border-collapse: collapse;
+    width: 60%; 
+    margin-left: auto;
+    margin-right: auto 
+  }
+  
+
 
 .register {
     border-radius: 5px;
@@ -82,13 +146,13 @@
   display: inline-block;
 }
 
-.col-25 {
+.col-25{
     float: left;
     width: 25%;
     margin-top: 5px;
 }
   
-.col-75 {
+.col-75{
     float: left;
     width: 75%;
     margin-top: 5px;
@@ -116,21 +180,26 @@
 }
 
 
-.register_patient {
+.register_patient form {
     border-radius: 5px;
-    top: 60%;
+    top: 45%;
     left: 50%;
     position: absolute;
     background: rgb(0, 0, 0);
     background: #f2f2f2; 
     color: black;
     width: 500px;
-    height: 600px;
+    height: 670px;
     text-align: left;
     font-size: 15px;
     margin-left: -250px;
-    margin-top: -300px;
-    
+    margin-top: -300px;  
+}
+
+.admit_details{
+  height: 200px;
+  background-color:#474e5d;
+  /* color: #ddd; */
 }
 
 .register_patient h3{
@@ -160,31 +229,37 @@
     cursor: pointer;
     float: left;
     margin-left: 100px;
-
-margin-top: 10px;
+    margin-top: 10px;
 }
 
-.register_patient button:hover {
+.register_patient button:hover{
     background-color: #45a049;
 }
 
 .login{
     height: 100%;
     width: 100%;
-    background-image: url(images/img2.jpg);
     background-position: center;
     background-size: 100%;
     position: absolute;
 }
 
+.input-group p{
+  font-size: 20px;
+}
+
 .form-box{
+    top: 50%;
+    left: 50%;
     width: 400px;
     height: 400px;
     position: relative;
     margin: 6% auto;
     background:#f2f2f2;
     padding: 5px;
-   overflow: hidden;
+    overflow: hidden;
+    margin-left: -200px;
+    margin-top: -200px;
 }
 
 .btn-box{
@@ -268,28 +343,13 @@ margin-top: 10px;
   .reg-page{
     height: 100%;
     width: 100%;
-    /* background-image: url(images/img2.jpg); */
     background-position: center;
     background-size: 100%;
     position: absolute;
   }
 
-  .hmgt{
-    height: 100%;
-    width: 100%;
-    /* background-image: url(images/img2.jpg); */
-    background-position: center;
-    background-size: 100%;
-    position: absolute;   
-  }
   
-.hmgt table {
-    font-family: "sans-serif";
-    border-collapse: collapse;
-    width: 80%;
-    margin-left: 100px;
-    margin-top: 100px;
-}
+ 
 
 .hmgt th,td{
   border: 1px solid #ddd;
@@ -318,14 +378,15 @@ margin-top: 10px;
     padding: 12px 20px;
     border: none;
     cursor: pointer;
-    position: fixed;
+    position: relative;
     margin-left: 100px;
     margin-top: 50px;
     width: 280px;
     border-radius: 40px;
+    padding-bottom: 20px;
   }
   
-  /* The popup form - hidden by default */
+  
   .form-popup {
     display: none;
     position: fixed;
@@ -341,6 +402,14 @@ margin-top: 10px;
     height: 400px;
     padding: 12px;
     background-color: rgb(168, 167, 167);
+    top: 50%;
+    left: 10%;
+    position: relative;
+    margin: 6% auto;
+    background:#f2f2f2;
+    overflow: hidden;
+    margin-left: 100px;
+    margin-top: 100px;
   }
 
   .form-container input[type=text], input[type=date], select, textarea {
@@ -382,22 +451,10 @@ margin-top: 10px;
     text-align: center;
 }
 
-.footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
-    text-align: center;
-    height: 50px;
- }
-
  .reg{
-    height: 800px;
+    height: 900px;
     width: 100%;
-    background-image: url(images/img2.jpg);
     background-position: center;
-    background-repeat:no-repeat ;
     background-size: 100%;
     position: absolute;
  }
@@ -414,7 +471,107 @@ margin-top: 10px;
 
   .about-des{
     text-align: left;
-    color: white;
+    color: black;
     margin-left: 50px;
+    background-color: rgb(164, 163, 241);
+    width: 80%;
+    margin-left: 100px;
+    margin-top: 50px;
   }
+
+  .about-section h1{
+    font-size: 35px;
+  }
+  .about-section h3{
+    font-size: 25px;
+  }
+  .about-des p{
+    font-size: 20px;
+    margin-left: 100px;    
+  }
+  .about-des h1{
+    font-size: 30px;
+    margin-left: 80px;
+    text-align: center;
+    color: maroon;
+    padding-top: 20px;
+  }
+  .about-des h2{
+    margin-left: 80px;
+    font-size: 25px;
+  }
+.contact-details{
+    padding: 20px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+    width: 400px;
+    height: 300px;
+    left: 35%;
+    top: 20%;
+    position: relative;
+}
+
+.contact-details p{
+  font-size: 20px;
+}
+
+
+
+.view_patient form {
+  border-radius: 5px;
+  top: 60%;
+  left: 50%;
+  position: absolute;
+  background: rgb(0, 0, 0);
+  background: #f2f2f2; 
+  color: black;
+  width: 500px;
+  height: 700px;
+  text-align: left;
+  font-size: 15px;
+  margin-left: -250px;
+  margin-top: -300px; 
+  margin-bottom: 50px; 
+}
+
+.view_patient h3{
+  text-align: center;
+}
+
+.view_patient input[type=text], select, textarea {
+  width: 300px;
+  height: 8px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.view_patient label{
+padding: 12px 10px;
+display: inline-block;
+}
+
+.view_patient button{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  margin-left: 100px;
+  margin-top: 10px;
+  width: 300px;
+}
+
+.view_patient button:hover{
+  background-color: #45a049;
+}
+
+
+
+/*-----------------------------
+*/
 

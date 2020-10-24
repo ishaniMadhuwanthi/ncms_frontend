@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<title>NCMS-National COVID Management System</title>
+<link rel="shortcut icon" href="images/favicon.png">
+
+
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/patient.js"></script>
+    <script src="toaster/toastr.min.js"></script>
+    <script src="jquery/jquery.easing.min.js"></script>
+    <script src="jquery/js.cookie-2.2.1.min.js"></script>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/sweetalert2.min.js"></script>
+</head>
+
+<body style="background-color:cadetblue";>
+
+    <div class="hmgt">
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+            <a href="hospital.html">Hospital</a>
+            <a href="patient.html">Patient</a>
+            <a href="doctor.html">Doctor</a>       
+        </nav>
+
+
+        <div class="view_patient" > 
+            <form id="updatePatient">
+                <h3>PATIENT MANAGEMENT</h3>
+                <div class="row">
+                    <div class="col-25">
+                        <label>NIC</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="patient_id" name="patient_id" required>
+                    </div>
+                    </div>
+            <div class="row">
+            <div class="col-25">
+                <label for="fname">First Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-25">
+                <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                <label for="content">Contact</label>
+                </div>
+                <div class="col-75">
+                <input type="text" id="contact" name="contact" required>
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-25">
+                <label for="district">District</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="district" name="district" required>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-25">
+                <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                <input type="text" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                <label for="age">Age</label>
+                </div>
+                <div class="col-75">
+                <input type="text" id="age" name="age" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="location">Location</label>
+                </div>
+                <div id="x_co" class="col-75">
+                    <input type="text" id="x_location" name="x_location" required>
+                </div>
+                <div class="row">
+                    <div  class="col-75">
+                        <input type="text" id="y_location" name="y_location" required>
+                    </div>
+                </div>   
+            </div>
+            <div class="row">
+                <div class="col-25">
+                <label for="admit_date">Admit date</label>
+                </div>
+                <div class="col-75">
+                <input type="text" id="admit_date" name="admit_date">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                <label for="discharge_date">Discharge date</label>
+                </div>
+                <div class="col-75">
+                <input type="text" id="discharge_date" name="discharge_date">
+                </div>
+            </div>
+              <button type="submit" class="btn">Save</button>
+            </form>
+            </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+          $.when(viewPatient(getUrlParameter("patient_id")));
+            $('#updatePatient').submit(function (e) {
+                e.preventDefault();
+                let form = $(this);
+                savePatient(getUrlParameter("patient_id"), form)
+            });
+
+            // $('#discharge').click(function (e){
+            //      e.preventDefault();
+
+            //     Swal.fire({
+            //         title: 'Confirm Action',
+            //         text: 'Are you sure do you want to discharge patient?',
+            //         icon: 'warning',
+            //         showCancelButton: true,
+            //         allowEnterKey: false,
+            //         confirmButtonText: 'Discharge',
+            //         cancelButtonText: 'Cancel'
+            //     }).then((result) => {
+            //         if (result.value) {
+            //             $.when(dischargePatient(getUrlParameter("patient_id"))).then(window.location.replace("patient.html"));
+            //         }
+            //     });
+            // })
+        });
+    </script>
+
+
+    
+</body>
+</html>     

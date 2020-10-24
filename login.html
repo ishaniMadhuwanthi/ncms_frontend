@@ -13,12 +13,13 @@
     <script src="toaster/toastr.min.js"></script>
     <script src="jquery/jquery.min.js"></script>
     <script src="jquery/jquery.easing.min.js"></script>
+    <script src="jquery/js.cookie-2.2.1.min.js"></script>
     </head>
 
-<body>
+<body  style="background-color:cadetblue"; >
 
   <!--login pagew-->
-    <div class="login">
+    <div class="login" >
 
         <!-- Navigation -->
         <nav class="navbar">
@@ -35,31 +36,27 @@
                 <button type="button" class="toggle-btn" onclick="moh()">Moh</button>
                 <!-- <button type="button" class="toggle-btn" onclick="patient()">Patient</button> -->
             </div>
+
             <form id="doctor_login_form" class="input-group">
                 <input type="email" classs="input-field" placeholder="Email" id="email" name="email" required>
                 <input type="text" classs="input-field" placeholder="Password" id="doctor_id" name="doctor_id" required>
-                <button type="submit" class="submit-btn" onclick="doctorLogin()">Login</button>
+                <button type="submit" class="submit-btn">Login</button>
+                <div class="row" style="margin-left: 10px;">
+                   <p> If you are patient, you can register<a href="patientRegister.html"> here.</a></p>
+                </div>
             </form>
+            
             <form id="moh_login_form" class="input-group">
                 <input type="email" classs="input-field" placeholder="Email" id="email" name="email"  required>
                 <input type="text" classs="input-field" placeholder="Password" id="moh_id" name="moh_id" required>
-                <button type="submit" class="submit-btn" onclick="mohLogin()">Login</button>
-            </form>
-            <!-- <form id="patient" class="input-group">
-                <input type="email" classs="input-field" placeholder="Email" id="email" name="email"  required>
-                <input type="text" classs="input-field" placeholder="Password" id="password" name="password" required>
-                <button type="submit" class="submit-btn" onclick="patientLogin()">Login</button>
+                <button type="submit" class="submit-btn">Login</button>
                 <div class="row" style="margin-left: 10px;">
-                    If you are not registered, you can register<a href="patientRegister.html"> here.</a>
+                    <p>If you are patient, you can register<a href="patientRegister.html"> here.</a></p>
                 </div>
-            </form> -->
+            </form>
+           
         </div>
-               
-<!--footer-->
-<div class="footer">
-    <p>Footer</p>
-  </div>
-     
+                    
     </div>
     
     <script>
@@ -78,22 +75,31 @@
             y.style.left="50px";
             z.style.left="100px";
         }
-        // function patient(){
-        //     x.style.left="-400px";
-        //     y.style.left="-400px";
-        //     w.style.left="50px";
-        //     z.style.left="190px";
-        // }
+      
     </script>
 
 <script type="text/javascript">
     $(document).ready(function () {
+        doctor()
         $('#doctor_login_form').submit(function (e) {
             e.preventDefault();
             $(".errorMessage").remove();
 
             let form = $(this);
             doctorLogin(form);
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        moh()
+        $('#moh_login_form').submit(function (e) {
+            e.preventDefault();
+            $(".errorMessage").remove();
+
+            let form = $(this);
+            mohLogin(form);
         });
     });
 </script>
