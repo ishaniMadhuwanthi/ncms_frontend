@@ -20,30 +20,49 @@ function ajaxErrorHandle(jqXhr, redirect = false) {
 }
 
 
+/*
+----------doctor login----
+*/
 function doctorLogin(form) {
     $.ajax({
         type: "POST",
-        url: 'http://localhost:8090/doctorRegister?' + form.serialize(),
+        url: 'http://localhost:8090/Login?' + form.serialize(),
         success: function (data, status, xhr) {
-            let doctor_id = data.data.doctor_id;
-            let is_director = data.data.is_director;
+            let doctor_id = data.doctor_id;
+            let email = data.email;
 
             Cookies.set('doctor_id', doctor_id);
-            Cookies.set('is_director', is_director);
+            Cookies.set('email', email);
 
-            switch (is_director) {
-                case 0:
-                    window.location.replace('index.html');
-                    break;
-            
-                case 1:
-                    window.location.replace('patient.html');
-                    break;
+            console.log('login successfully');
+            toastr.success('Login successfully', 'Login Complete');
 
-                default:
-                    window.location.replace('index.html');
-                    break;
-            }
+            window.location.replace("doctorDashboard.html");
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+            ajaxErrorHandle(jqXhr);
+        }
+    });
+}
+
+/*
+----------moh login----
+*/
+function mohLogin(form) {
+    $.ajax({
+        type: "POST",
+        url: 'http://localhost:8090/MohLogin?' + form.serialize(),
+        success: function (data, status, xhr) {
+            let moh_id = data.moh_id;
+            let email = data.email;
+
+            Cookies.set('moh_id', moh_id);
+            Cookies.set('email', email);
+
+            console.log('login successfully');
+            toastr.success('Login successfully', 'Login Complete');
+
+            window.location.replace("mohDashboard.html");
         },
         error: function (jqXhr, textStatus, errorMessage) {
             ajaxErrorHandle(jqXhr);

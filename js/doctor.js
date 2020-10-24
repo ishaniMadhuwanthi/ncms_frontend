@@ -21,7 +21,7 @@ function ajaxErrorHandle(jqXhr, redirect = false) {
 
 
 /*
----------------add new hospital------------------
+---------------add new doctor------------------
 */
 function addDoctor(form) {
     $.ajax({
@@ -39,16 +39,17 @@ function addDoctor(form) {
 }
 
 /*
----------------get hospital list------------------
+---------------get doctor list------------------
 */
 function loadDoctorList() {
     $.ajax({
         type: "GET",
-        url: 'http://localhost:8090/doctorRegister?',
+        url:  'http://localhost:8090/DoctorList',
         dataType: "json",
         success: function (data, status, xhr) {
-            $.each(data.data, function (key, doctor) {
-                $('#doctor-list').append('<option value=' + doctor.doctor_id + '>' + doctor.name + '</option>');
+            $.each(data, function(key, doctor){
+                let printStr = '<tr><td>' + doctor.doctor_id + '</td><td>' + doctor.name + '</td><td>' + doctor.email +'</td><td>' + doctor.hospital_id + '</td><td>' + doctor.is_director  +'</td></tr>';
+                $('#doctor-list tr:last').after(printStr); 
             });
         },
         error: function (jqXhr, textStatus, errorMessage) {

@@ -1,3 +1,21 @@
+
+
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+}
+
 /*
 ---------------error handling------------------
 */
@@ -44,12 +62,11 @@ function addHospital(form) {
 function loadHospitalList() {
     $.ajax({
         type: "GET",
-        url: 'http://localhost:8090/hospitalRegister?hospital_id=',
+        url: 'http://localhost:8090/HospitalList',
         dataType: "json",
         success: function (data, status, xhr) {
-            let hospitals = data.data;
-            $.each(hospitals, function(key, hospital){
-                let printStr = '<tr><td>' + hospital.hospital_id + '</td><td>' + hospital.name + '</td><td>' + hospital.district +'</td><td>' + hospital.x_location + '</td><td>' + hospital.y_location +'</td><td><a href="editHospital.html?id=' + hospital.hospital_id + '" >Edit</a></td></tr>';
+            $.each(data, function(key, hospital){
+                let printStr = '<tr><td>' + hospital.hospital_id + '</td><td>' + hospital.name + '</td><td>' + hospital.district +'</td><td>' + hospital.x_location + '</td><td>' + hospital.y_location  +'</td><td><a href="editHospital.html?hospital_id=' + hospital.hospital_id + '" class="edit-btn">Edit</a></td></tr>';
                 $('#hospitals-list tr:last').after(printStr); 
             });
         },
@@ -58,3 +75,65 @@ function loadHospitalList() {
         }
     });
 }
+
+/*
+-----------------edit hospital---------------
+*/ 
+
+function editHospital(hospital_id){
+    $.ajax({
+        type: "GET",
+        url: 'http://localhost:8090/hospitalRegister?hospital_id=' + hospital_id,
+        dataType: "json",
+        success: function (data, status, xhr) {
+            let hospital = data;
+            $('#hospital_id').val(hospital.hospital_id);
+            $('#name').val(hospital.name).change();
+            $('#district').val(hospital.district);
+            $('#x_location').val(hospital.x_location);
+            $('#y_location').val(hospital.y_location).change();
+            // $('#doctor').val(hospital.doctor_id).change();
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+            ajaxErrorHandle(jqXhr);
+        }
+    });
+}
+
+
+/*
+-----------------update hospital---------------
+*/ 
+function updateHospital(hospital_id, form){
+    $.ajax({
+        type: "PUT",
+        url:'http://localhost:8090/hospitalRegister?hospital_id=' + hospital_id + '&' + form.serialize(),
+        success: function (data, status, xhr) {
+            console.log('updated successfully');
+            toastr.success('Hospital updated successfully', 'Save Complete');
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+            toastr.error('Something went wrong! ' + errorMessage, 'Error')
+        }
+    });
+}
+
+
+/*
+-----------------delete hospital---------------
+*/ 
+function deleteHospital(hospital_id) {
+    $.ajax({
+        type: "DELETE",
+        url:'http://localhost:8090/hospitalRegister?hospital_id=' + hospital_id,
+        success: function (data, status, xhr) {
+            toastr.success('Hospital deleted successfully', 'Delete Complete');
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+            toastr.error('Something went wrong! ' + errorMessage, 'Error')
+        }
+    });
+}
+
+
+
