@@ -8,8 +8,8 @@ Backend developed using Java & MySQL.
 
 Frontend developed using HTML,CSS and JavaScript.
 
-- Backend: View Repository
-+ Frontend:View Repository
+- Backend: [View Repository](https://github.com/ishaniMadhuwanthi/spark_ncms_backend)
++ Frontend:[View Repository](https://github.com/ishaniMadhuwanthi/spark_ncms_frontend)
 
 ## About Project
 
@@ -60,11 +60,15 @@ function loadHospitalList() {
 In the system, only MOH and Doctor is able to login to the system. Patient can only register to the system. Then they will recieved their reservation details.
 
 - MOH
+
 Username: moh@gmail.com
+
 Password: moh123
 
 + Doctor
+
 Username: doc1@gmail.com
+
 Password: doc1123
 
 ## Libraries
